@@ -1,0 +1,67 @@
+---
+title: Le Wagon - Middleman - Flats
+---
+
+<% flat = data.flats[owner] %>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>'); height: 50vh; background-position: center;">
+</div>
+
+
+<!-- Inject flat data in template -->
+
+<div class="header"  style="background: white;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="flat-header" style="display: -webkit-box;
+                                        display: -ms-flexbox;
+                                        display: flex;
+                                        -webkit-box-align: center;
+                                        -ms-flex-align: center;
+                                        align-items: center;
+                                        padding: 30px;
+                                        padding-left: 0;">
+          <div class="flat-owner text-center" style="padding: 20px;">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle", width: "80"%>
+            <p><%= owner %></p>
+          </div>
+          <div style="box-sizing: border-box;">
+            <h1 style="font-size: 18px; margin-top: 0px;"><%= flat.description %></h1>
+            <p style="font-size: 15px;"><%= flat.city_name %></p>
+            <% flat.rating.times do %>
+              <i class="fa fa-star" style="color: #FFB400;"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <form action="#" style="margin: 20px 0;
+                                margin-right: 0;
+                                background: #F4F4F4;
+                                padding: 15px;
+                                border-radius: 3px;">
+          <h4>Book this flat</h4>
+          <div class="row" style="margin-bottom: 15px;">
+            <div class="col-xs-6">
+              <input type="text" class="form-control" placeholder="checkin" id="checkin">
+            </div>
+            <div class="col-xs-6">
+              <input type="text" class="form-control" placeholder="checkout">
+            </div>
+          </div>
+          <div class="form-group">
+            <select name="guests" id="guests" class="form-control">
+              <option value="1">1 guest</option>
+              <option value="2">2 guest</option>
+              <option value="3">3 guest</option>
+            </select>
+          </div>
+          <input type="submit" class="btn btn-danger" value="Book it" style="width: 100%;">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
